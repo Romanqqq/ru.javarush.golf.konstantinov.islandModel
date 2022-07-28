@@ -1,10 +1,5 @@
 import island.Island;
-import island.IslandSize;
-import plants.Plants;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
+import island.IslandLocation;
 
 public class IslandController {
 
@@ -12,11 +7,15 @@ public class IslandController {
 
 
     public static void main(String[] args) {
-        //создали объект
+        //создали объект остров
         Island island = new Island();
-        System.out.println();
-
-        }
+        IslandLocation islandLocation = new IslandLocation();
+        islandLocation.initialize();
+        island.plantsGrow();
+        island.predatorInitialize();
+        island.herbivoresInitialize();
+        islandLocation.printIslandStatistics();
+            }
 
 
 

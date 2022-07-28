@@ -1,6 +1,14 @@
 package animals.herbivores;
 
 import animals.predators.Predator;
+import plants.Plants;
 
-public class Duck implements Herbivore, Predator {
+import java.util.List;
+
+public class Duck  {
+
+
+    public void eat(List<Plants> plants,List<Herbivore>herbivores) {
+
+    }
 }

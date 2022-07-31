@@ -3,10 +3,11 @@ package animals.predators;
 
 import animals.Animals;
 import animals.herbivores.Herbivore;
+import plants.Plants;
 
 import java.util.List;
-
-public class Wolf extends Animals implements Predator{
+//Волк
+public class Wolf extends Animals{
  private final int maxQuantityTypeAnimal=30; // максимальное количество одного вида в ячейке
     private double saturation;
 
@@ -18,13 +19,12 @@ public class Wolf extends Animals implements Predator{
         return maxQuantityTypeAnimal;
     }
 
-    @Override
-    public void eat(List<Herbivore> herbivores) {
 
 
-
-
-
-
-    }
 }
+
+
+
+
+
+

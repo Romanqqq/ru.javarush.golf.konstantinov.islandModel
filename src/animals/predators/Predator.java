@@ -5,9 +5,14 @@ import animals.herbivores.Herbivore;
 
 import java.util.List;
 
-public interface Predator{
-    void eat(List<Herbivore> herbivores);
+public abstract class Predator extends Animals{
+    public Predator(int movementSpeed, double weight, double saturationMax) {
+        super(movementSpeed, weight, saturationMax);
+    }
 
+    public void eat(List<Herbivore> herbivores) {
+
+    }
 
 
 }

@@ -16,9 +16,9 @@ public void initialize(){
             for (int j = 0; j < island[i].length; j++) {
                 System.out.println(island[i][j].getClass().getSimpleName());
                 System.out.println("Ячейка: "+ i +" " + j);
-                System.out.println("Растений: "+island[i][j].plantsCount());
-                System.out.println("Травоядных: "+island[i][j].herbivoreCount());
-                System.out.println("Хищников: "+island[i][j].predatorCount());
+                System.out.println("Растений: "+island[i][j].plantsGrow());
+                System.out.println("Травоядных: "+island[i][j].herbivoresInitialize());
+                System.out.println("Хищников: "+island[i][j].predatorInitialize());
 
             }
         }

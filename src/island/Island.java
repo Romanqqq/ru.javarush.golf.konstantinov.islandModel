@@ -1,6 +1,6 @@
 package island;
 
-import animals.Animals;
+import animals.Animal;
 import animals.herbivores.*;
 import animals.predators.*;
 import plants.Plants;
@@ -14,8 +14,8 @@ public class Island {
 
     //Списки, куда будут записываться объекты
      List<Plants> cellPlants = new ArrayList<>();
-     List<Animals>cellPredators= new ArrayList<>();
-     List<Animals>cellHerbivore= new ArrayList<>();
+     List<Animal>cellPredators= new ArrayList<>();
+     List<Animal>cellHerbivore= new ArrayList<>();
 
         //добавляем в список растения от 1 до 200 силой великого рандома
     public int plantsGrow() {
@@ -98,11 +98,11 @@ public class Island {
         return cellPlants;
     }
 
-    public List<Animals> getCellPredators() {
+    public List<Animal> getCellPredators() {
         return cellPredators;
     }
 
-    public List<Animals> getCellHerbivore() {
+    public List<Animal> getCellHerbivore() {
         return cellHerbivore;
     }
 
@@ -110,11 +110,11 @@ public class Island {
         this.cellPlants = cellPlants;
     }
 
-    public void setCellPredators(List<Animals> cellPredators) {
+    public void setCellPredators(List<Animal> cellPredators) {
         this.cellPredators = cellPredators;
     }
 
-    public void setCellHerbivore(List<Animals> cellHerbivore) {
+    public void setCellHerbivore(List<Animal> cellHerbivore) {
         this.cellHerbivore = cellHerbivore;
     }
 }

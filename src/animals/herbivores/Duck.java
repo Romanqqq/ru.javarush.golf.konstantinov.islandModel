@@ -1,13 +1,13 @@
 package animals.herbivores;
 
-import animals.Animals;
-import animals.predators.Predator;
 import plants.Plants;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 //Утка
-public class Duck extends Animals {
-    private final int maxQuantityTypeAnimal=200; // максимальное количество одного вида в ячейке
+public class Duck extends Herbivore {
+    private final int maxQuantityTypeAnimal = 200; // максимальное количество одного вида в ячейке
     private double saturation;
 
     public Duck() {
@@ -19,9 +19,31 @@ public class Duck extends Animals {
     }
 
 
+    public void eat(List<Plants> plants, List<Herbivore> herbivores) {
+        if (getSaturation() <= getSaturationMax() / 2 /*&& getMovementSpeed() != 0*/) {
+            while (getSaturation() <= getSaturationMax()) {
+                int chanceEat = ThreadLocalRandom.current().nextInt(100);
+                int listPlants = plants.size();
+                if (chanceEat > 50 && listPlants > 0) {
+                    this.setSaturation(getSaturation() + 1);
+                    plants.remove(1);
+                } else {
+                    for (Herbivore herbivore : herbivores) {
+                        Herbivore herbivoreCaterpillar = (Herbivore) herbivore;
+                        if (herbivoreCaterpillar.getClass().getSimpleName().equals("Caterpillar")) {
+                            herbivores.remove(herbivore);
+                            this.setSaturation(getSaturation() + 0.01);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 //    public void eat(List<Plants> plants,List<Herbivore>herbivores) {
 //
 //    }
 
-}
+
 //ест гусеницу

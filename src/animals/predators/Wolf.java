@@ -1,13 +1,10 @@
 package animals.predators;
 
 
-import animals.Animals;
-import animals.herbivores.Herbivore;
-import plants.Plants;
+import animals.Animal;
 
-import java.util.List;
 //Волк
-public class Wolf extends Animals{
+public class Wolf extends Predator {
  private final int maxQuantityTypeAnimal=30; // максимальное количество одного вида в ячейке
     private double saturation;
 

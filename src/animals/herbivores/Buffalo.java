@@ -1,4 +1,9 @@
 package animals.herbivores;
+
+import plants.Plants;
+
+import java.util.List;
+
 //Буйвол
 public class Buffalo extends Herbivore  {
     private final int maxQuantityTypeAnimal=10; // максимальное количество одного вида в ячейке
@@ -11,4 +16,6 @@ public class Buffalo extends Herbivore  {
     public int getMaxQuantityTypeAnimal() {
         return maxQuantityTypeAnimal;
     }
+
+
 }

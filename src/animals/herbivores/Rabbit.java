@@ -1,11 +1,5 @@
 package animals.herbivores;
 
-import animals.Animals;
-import island.Island;
-import plants.Plants;
-
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 //Кролик
 public class Rabbit extends  Herbivore{
     //задал основные характеристики

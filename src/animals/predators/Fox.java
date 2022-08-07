@@ -1,4 +1,10 @@
 package animals.predators;
+
+import animals.herbivores.Herbivore;
+
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 //Лиса
 public class Fox extends Predator {
     private final int maxQuantityTypeAnimal=30; // максимальное количество одного вида в ячейке
@@ -11,4 +17,5 @@ public class Fox extends Predator {
     public int getMaxQuantityTypeAnimal() {
         return maxQuantityTypeAnimal;
     }
+
 }

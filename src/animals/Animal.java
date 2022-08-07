@@ -1,16 +1,16 @@
 package animals;
 
-import plants.Plants;
+import parameters.Direction;
+import java.util.concurrent.ThreadLocalRandom;
 
-import java.util.List;
-
-public abstract class Animals {
+public abstract class Animal {
     int movementSpeed; // скорость передвижения
     double weight; // вес животного кг
     double saturationMax; //насыщение животного максимальное
     double saturation; // насыщение животного при появлении
+    int genderAnimal;
 
-    public Animals(int movementSpeed, double weight,double saturationMax) {
+    public Animal(int movementSpeed, double weight, double saturationMax) {
         this.movementSpeed = movementSpeed;
         this.weight = weight;
         this.saturationMax = saturationMax;
@@ -20,21 +20,34 @@ public abstract class Animals {
     //перемещение
     public void move(){
 
-        
-
     }
 
-    //поесть
-//    public void eat(){
-//
-//
-//    }
-
-    //размножение
-    public void reproduction(){
-
+    public static Direction directionOfMovement() {
+        return switch (ThreadLocalRandom.current().nextInt(0, 4)) {
+            case 0 -> Direction.UP;
+            case 1 -> Direction.RIGHT;
+            case 2 -> Direction.DOWN;
+            default -> Direction.LEFT;
+        };
     }
- //   public abstract void listEat(List<Plants>plants);
+
+    //размножение, рандомно задаем пол животного
+    public void setGenderAnimal(){
+        this.genderAnimal= (int) (Math.random()*2+1);
+    }
+
+    public int getGenderAnimal() {
+         return this.genderAnimal;
+    }
+//проверяем сыто ли животное для размножения
+
+    public boolean reproduction (){
+        boolean reproduction=false;
+        if(this.saturation==this.saturationMax){
+           reproduction=true;
+            }
+        return reproduction;
+        }
 
     public double getSaturationMax() {
         return saturationMax;

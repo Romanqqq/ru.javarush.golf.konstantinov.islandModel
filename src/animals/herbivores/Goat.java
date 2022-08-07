@@ -1,9 +1,5 @@
 package animals.herbivores;
 
-import animals.Animals;
-import plants.Plants;
-
-import java.util.List;
 //Коза
 public class Goat extends Herbivore {
     //задал основные характеристики

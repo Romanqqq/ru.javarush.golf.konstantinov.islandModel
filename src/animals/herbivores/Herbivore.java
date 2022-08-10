@@ -1,14 +1,14 @@
 package animals.herbivores;
 
 import animals.Animal;
-import island.Island;
+import island.IslandLocation;
 import plants.Plants;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Herbivore extends Animal {
-    Island island = new Island();
+    IslandLocation island = new IslandLocation();
 
     public Herbivore(int movementSpeed, double weight, double saturationMax) {
         super(movementSpeed, weight, saturationMax);

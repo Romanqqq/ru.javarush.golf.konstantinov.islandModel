@@ -1,5 +1,5 @@
-import island.Island;
 import island.IslandLocation;
+import island.Island;
 
 public class IslandController {
 
@@ -8,9 +8,9 @@ public class IslandController {
 
     public static void main(String[] args) {
         //создали объект остров
-        IslandLocation islandLocation = new IslandLocation();
+        Island islandLocation = new Island();
         //создали объект наполнения острова
-        Island island = new Island();
+        IslandLocation island = new IslandLocation();
         //инициализируем остров
         islandLocation.initialize();
         //заполняем ячейки острова растениями

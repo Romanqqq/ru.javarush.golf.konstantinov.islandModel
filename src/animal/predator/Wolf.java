@@ -1,7 +1,5 @@
-package animals.predators;
+package animal.predator;
 
-
-import animals.Animal;
 
 //Волк
 public class Wolf extends Predator {

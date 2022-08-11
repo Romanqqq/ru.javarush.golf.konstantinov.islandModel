@@ -1,6 +1,6 @@
-package animals.herbivores;
+package animal.herbivore;
 
-import plants.Plants;
+import plant.Plant;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -19,7 +19,7 @@ public class Boar extends Herbivore {
     }
 
 
-    public void eat(List<Plants> plants, List<Herbivore> herbivores) {
+    public void eat(List<Plant> plants, List<Herbivore> herbivores) {
         if (getSaturation() <= getSaturationMax() / 2 /*&& getMovementSpeed() != 0*/) {
             while (getSaturation() <= getSaturationMax()) {
                 int chanceEat = ThreadLocalRandom.current().nextInt(100);

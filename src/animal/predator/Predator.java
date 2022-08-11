@@ -1,6 +1,6 @@
-package animals.predators;
-import animals.Animal;
-import parameters.MapChance;
+package animal.predator;
+import animal.Animal;
+import parameter.MapChance;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,6 +12,7 @@ public abstract class Predator extends Animal {
     }
 
     //метод eat для хищников
+
     public void eat(List<?> huntObjectHerbivore, List<Object> huntObjectPredator) {
         //создаем мапу, в которую попадут все животные, которых можно съесть
         Map<String, Integer> mapHuntChance = null;

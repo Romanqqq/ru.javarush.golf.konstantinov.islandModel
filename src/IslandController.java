@@ -1,5 +1,10 @@
 import island.IslandLocation;
 import island.Island;
+import parameter.MapChance;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class IslandController {
 
@@ -7,23 +12,22 @@ public class IslandController {
 
 
     public static void main(String[] args) {
+        MapChance mapChance = new MapChance();
         //создали объект остров
-        Island islandLocation = new Island();
-        //создали объект наполнения острова
-        IslandLocation island = new IslandLocation();
+        Island island = new Island();
+        IslandLocation islandLocation = new IslandLocation();
         //инициализируем остров
-        islandLocation.initialize();
+        island.initialize();
         //заполняем ячейки острова растениями
-        island.plantsGrow();
+        islandLocation.plantsGrow();
         //заполняем ячейки острова  хищниками
-        island.predatorInitialize();
+        islandLocation.predatorInitialize();
         //заполняем ячейки острова травоядными
-        island.herbivoresInitialize();
+        islandLocation.herbivoresInitialize();
+        ScheduledExecutorService scheduledExecutorService= Executors.newScheduledThreadPool(5);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
         //Выгружаем статистику по острову общую
-        islandLocation.printIslandStatistics();
-//        System.out.println(island.getCellPlants());
-//        System.out.println(island.getCellHerbivore());
-//        System.out.println(island.getCellPredators());
+        island.printIslandStatistics();
 
             }
 

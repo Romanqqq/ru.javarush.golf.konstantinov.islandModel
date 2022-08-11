@@ -1,4 +1,4 @@
-package animals.herbivores;
+package animal.herbivore;
 
 //Кролик
 public class Rabbit extends  Herbivore{

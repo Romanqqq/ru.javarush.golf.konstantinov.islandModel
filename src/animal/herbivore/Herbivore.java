@@ -1,8 +1,8 @@
-package animals.herbivores;
+package animal.herbivore;
 
-import animals.Animal;
+import animal.Animal;
 import island.IslandLocation;
-import plants.Plants;
+import plant.Plant;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,8 +15,8 @@ public abstract class Herbivore extends Animal {
     }
 
     //    реализовал метод eat для травоядных
-    public void eat(List<Plants> plants) {
-        if (getSaturation() <= getSaturationMax() / 2 /*&& getMovementSpeed() != 0*/) {
+    public void eat(List<Plant> plants) {
+        if (getSaturation() <= getSaturationMax() / 2) {
             while (getSaturation() <= getSaturationMax()) {
                 int chanceEat = ThreadLocalRandom.current().nextInt(100);
                 int listPlants = plants.size();

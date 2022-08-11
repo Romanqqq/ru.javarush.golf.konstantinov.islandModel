@@ -1,4 +1,4 @@
-package animals.herbivores;
+package animal.herbivore;
 
 //Коза
 public class Goat extends Herbivore {

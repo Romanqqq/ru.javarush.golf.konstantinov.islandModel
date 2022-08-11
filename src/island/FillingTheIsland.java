@@ -1,6 +1,6 @@
 package island;
 
-import animals.Animal;
+import animal.Animal;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -9,11 +9,10 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class FillingTheIsland {
-    public List<Animal> fillingIsland(Set<Class> islandFauna) {
+    public List<Animal> fillingIsland(List<Class> islandFauna) {
         List<Animal> islandFaunaGenerate = new CopyOnWriteArrayList<>();
         for (Class animalClass : islandFauna) {
             try {
-
                 Field maxQuantityTypeAnimalCell = animalClass.getDeclaredField("maxQuantityTypeAnimal");
                 maxQuantityTypeAnimalCell.setAccessible(true);
                 int countAnimal = 1 + (int) (Math.random() * ((int) maxQuantityTypeAnimalCell.get(null) - 1));
@@ -28,6 +27,7 @@ public class FillingTheIsland {
         }
         return islandFaunaGenerate;
     }
+
     public void reproductionAnimal(Set<Class> islandFauna, List<Animal> wildLife) {
         int male = 0;
         int female = 0;
@@ -51,32 +51,36 @@ public class FillingTheIsland {
                 } else if (female >= male && male > 0) {
                     children = male;
                 } else if (children != 0) {
-                    try {
+                    bornAnimal(wildLife, male, female, children, a);
+                }
+            }
+        }
+    }
 
-                        Field maxQuantityTypeAnimalCell = a.getDeclaredField("maxQuantityTypeAnimal");
-                        maxQuantityTypeAnimalCell.setAccessible(true);
-                        int countAnimal = (int) maxQuantityTypeAnimalCell.get(null);
-                        if ((male + female + children) < countAnimal) {
-                            Constructor<Animal> constructor = a.getConstructor();
-                            for (int i = 0; i < children; i++) {
-                                Animal animalAdd = constructor.newInstance();
-                                wildLife.add(animalAdd);
-                            }
-                        } else {
-                            countAnimal = countAnimal - (male + female);
-                            if (countAnimal > 0) {
-                                Constructor<Animal> constructor = a.getConstructor();
-                                for (int i = 0; i < countAnimal; i++) {
-                                    Animal animalAdd = constructor.newInstance();
-                                    wildLife.add(animalAdd);
-                                }
-                            }
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
+    private static void bornAnimal(List<Animal> wildLife, int male, int female, int children, Class a) {
+        try {
+
+            Field maxQuantityTypeAnimalCell = a.getDeclaredField("maxQuantityTypeAnimal");
+            maxQuantityTypeAnimalCell.setAccessible(true);
+            int countAnimal = (int) maxQuantityTypeAnimalCell.get(null);
+            if ((male + female + children) < countAnimal) {
+                Constructor<Animal> constructor = a.getConstructor();
+                for (int i = 0; i < children; i++) {
+                    Animal animalAdd = constructor.newInstance();
+                    wildLife.add(animalAdd);
+                }
+            } else {
+                countAnimal = countAnimal - (male + female);
+                if (countAnimal > 0) {
+                    Constructor<Animal> constructor = a.getConstructor();
+                    for (int i = 0; i < countAnimal; i++) {
+                        Animal animalAdd = constructor.newInstance();
+                        wildLife.add(animalAdd);
                     }
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

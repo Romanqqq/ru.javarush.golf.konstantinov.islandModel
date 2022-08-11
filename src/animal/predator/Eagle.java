@@ -1,4 +1,4 @@
-package animals.predators;
+package animal.predator;
 //Орел
 public class Eagle extends Predator {
     private final int maxQuantityTypeAnimal=20; // максимальное количество одного вида в ячейке

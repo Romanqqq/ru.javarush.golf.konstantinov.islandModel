@@ -1,4 +1,4 @@
-package animals.herbivores;
+package animal.herbivore;
 //Гусеница
 public class Caterpillar extends Herbivore  {
     private final int maxQuantityTypeAnimal=1000; // максимальное количество одного вида в ячейке

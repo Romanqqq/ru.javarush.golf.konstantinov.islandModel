@@ -1,7 +1,8 @@
-package animals;
+package animal;
 
-import parameters.Direction;
+import parameter.Direction;
 
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Animal {
@@ -57,7 +58,6 @@ public abstract class Animal {
         }
         return reproduction;
     }
-
     public double getSaturationMax() {
         return saturationMax;
     }

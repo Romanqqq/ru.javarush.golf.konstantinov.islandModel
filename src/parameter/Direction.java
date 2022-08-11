@@ -1,4 +1,4 @@
-package parameters;
+package parameter;
 
 public enum Direction {
     UP,RIGHT,DOWN,LEFT

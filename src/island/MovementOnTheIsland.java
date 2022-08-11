@@ -1,9 +1,9 @@
 package island;
 
-import animals.Animal;
-import animals.herbivores.Herbivore;
-import animals.predators.Predator;
-import parameters.Direction;
+import animal.Animal;
+import animal.herbivore.Herbivore;
+import animal.predator.Predator;
+import parameter.Direction;
 
 import java.lang.reflect.Field;
 import java.util.List;

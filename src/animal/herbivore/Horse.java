@@ -1,11 +1,11 @@
-package animals.herbivores;
-//Олень
-public class Deer extends Herbivore {
+package animal.herbivore;
+//Лошадь
+public class Horse extends Herbivore  {
     private final int maxQuantityTypeAnimal=20; // максимальное количество одного вида в ячейке
     private double saturation;
 
-    public Deer() {
-        super(4, 300, 50);
+    public Horse() {
+        super(4, 400, 60);
     }
 
     public int getMaxQuantityTypeAnimal() {

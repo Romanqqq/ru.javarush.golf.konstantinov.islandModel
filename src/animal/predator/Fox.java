@@ -1,14 +1,16 @@
-package animals.predators;
-//Удав
-public class Boa extends Predator{
+package animal.predator;
+
+//Лиса
+public class Fox extends Predator {
     private final int maxQuantityTypeAnimal=30; // максимальное количество одного вида в ячейке
     private double saturation;
 
-    public Boa() {
-        super(1, 15, 3);
+    public Fox() {
+        super(2, 8, 2);
     }
 
     public int getMaxQuantityTypeAnimal() {
         return maxQuantityTypeAnimal;
     }
+
 }

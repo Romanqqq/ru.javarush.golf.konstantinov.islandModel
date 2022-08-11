@@ -1,6 +1,4 @@
-package parameters;
-
-import animals.herbivores.Boar;
+package parameter;
 
 import java.util.HashMap;
 import java.util.Map;

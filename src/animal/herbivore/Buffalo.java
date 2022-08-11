@@ -1,8 +1,4 @@
-package animals.herbivores;
-
-import plants.Plants;
-
-import java.util.List;
+package animal.herbivore;
 
 //Буйвол
 public class Buffalo extends Herbivore  {

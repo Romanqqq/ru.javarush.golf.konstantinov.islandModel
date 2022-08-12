@@ -1,8 +1,8 @@
 package island;
 
 import animal.Animal;
-import animal.herbivore.Herbivore;
-import animal.predator.Predator;
+import animal.Herbivore;
+import animal.Predator;
 import parameter.Direction;
 
 import java.lang.reflect.Field;
@@ -11,13 +11,13 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MovementOnTheIsland {
     //проверка на Максимальное количество животных одного вида в ячейке
-    public boolean checkingTheMaximumNumberOfAnimalSpecies(Animal animal, IslandLocation[][] islandLocations, int maxQuantityTypeAnimal, int cellX, int cellY) {
+    private boolean checkingTheMaximumNumberOfAnimalSpecies(Animal animal, IslandLocation[][] islandLocations, int maxQuantityTypeAnimal, int cellX, int cellY) {
         boolean addNewAnimal = false;
         int animalInTheCell = 0;
         if (animal instanceof Predator) {
-            animalInTheCell = islandLocations[cellX][cellY].cellPredators.size();
+            animalInTheCell =(int) islandLocations[cellX][cellY].getCellPredators();
         } else if (animal instanceof Herbivore) {
-            animalInTheCell = islandLocations[cellX][cellY].cellHerbivore.size();
+            animalInTheCell = (int)islandLocations[cellX][cellY].getCellHerbivore();
         }
         if ((animalInTheCell + 1) <= maxQuantityTypeAnimal) {
             addNewAnimal = true;
@@ -46,21 +46,24 @@ public class MovementOnTheIsland {
 
                 if (directionOfMovement.equals(Direction.UP)) {
                     if ((cellY - numberOfStep) >= MIN_Y) {
-                        if (checkingTheMaximumNumberOfAnimalSpecies(animal1, islandLocations, countAnimalMax, cellX, cellY - numberOfStep)) {
+                        if (checkingTheMaximumNumberOfAnimalSpecies(animal1, islandLocations, countAnimalMax, cellX,
+                                cellY - numberOfStep)) {
                             islandLocations[cellY - numberOfStep][cellX].addAnAnimalToACell(animal1);
                             animal.remove(animal1);
                         }
                     }
                 } else if (directionOfMovement.equals(Direction.RIGHT)) {
                     if ((cellY - numberOfStep) >= CELL_MAX_X) {
-                        if (checkingTheMaximumNumberOfAnimalSpecies(animal1, islandLocations, countAnimalMax, cellX + numberOfStep, cellY)) {
+                        if (checkingTheMaximumNumberOfAnimalSpecies(animal1, islandLocations, countAnimalMax,
+                                cellX + numberOfStep, cellY)) {
                             islandLocations[cellY][cellX + numberOfStep].addAnAnimalToACell(animal1);
                             animal.remove(animal1);
                         }
                     }
                 } else if (directionOfMovement.equals(Direction.DOWN)) {
                     if ((cellY - numberOfStep) >= CELL_MAX_Y) {
-                        if (checkingTheMaximumNumberOfAnimalSpecies(animal1, islandLocations, countAnimalMax, cellX, cellY + numberOfStep)) {
+                        if (checkingTheMaximumNumberOfAnimalSpecies(animal1, islandLocations, countAnimalMax, cellX,
+                                cellY + numberOfStep)) {
                             islandLocations[cellY + numberOfStep][cellX].addAnAnimalToACell(animal1);
                             animal.remove(animal1);
                         }
@@ -74,10 +77,6 @@ public class MovementOnTheIsland {
                     }
                 }
             }
-
         }
-
-
     }
-
 }

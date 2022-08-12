@@ -40,7 +40,7 @@ public abstract class Animal {
         }
         return direction;
     }
-
+    public abstract void eat(List<?> foodList,List<?>listFood);
     //размножение, рандомно задаем пол животного
     public void setGenderAnimal() {
         this.genderAnimal = (int) (Math.random() * 2 + 1);
@@ -77,6 +77,7 @@ public abstract class Animal {
     public int getMovementSpeed() {
         return movementSpeed;
     }
+
 
     public void setMovementSpeed(int movementSpeed) {
         this.movementSpeed = movementSpeed;

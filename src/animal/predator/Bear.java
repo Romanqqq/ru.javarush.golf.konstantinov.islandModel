@@ -1,6 +1,9 @@
 package animal.predator;
+
+import animal.Predator;
+
 //Медведь
-public class Bear extends Predator{
+public class Bear extends Predator {
     private final int maxQuantityTypeAnimal=5; // максимальное количество одного вида в ячейке
     private double saturation;
 

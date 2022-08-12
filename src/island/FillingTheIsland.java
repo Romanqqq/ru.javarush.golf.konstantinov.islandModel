@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class FillingTheIsland {
-    public List<Animal> fillingIsland(List<Class> islandFauna) {
+    public List<Animal> fillingIsland(Set<Class> islandFauna) {
         List<Animal> islandFaunaGenerate = new CopyOnWriteArrayList<>();
         for (Class animalClass : islandFauna) {
             try {

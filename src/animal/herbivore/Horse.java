@@ -1,6 +1,9 @@
 package animal.herbivore;
+
+import animal.Herbivore;
+
 //Лошадь
-public class Horse extends Herbivore  {
+public class Horse extends Herbivore {
     private final int maxQuantityTypeAnimal=20; // максимальное количество одного вида в ячейке
     private double saturation;
 

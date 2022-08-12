@@ -1,5 +1,6 @@
 package animal.herbivore;
 
+import animal.Herbivore;
 import plant.Plant;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class Boar extends Herbivore {
     }
 
 
-    public void eat(List<Plant> plants, List<Herbivore> herbivores) {
+    public void eat(List<?> plants, List<?> herbivores) {
         if (getSaturation() <= getSaturationMax() / 2 /*&& getMovementSpeed() != 0*/) {
             while (getSaturation() <= getSaturationMax()) {
                 int chanceEat = ThreadLocalRandom.current().nextInt(100);
@@ -28,7 +29,7 @@ public class Boar extends Herbivore {
                     this.setSaturation(getSaturation() + 1);
                     plants.remove(1);
                 } else {
-                    for (Herbivore herbivore : herbivores) {
+                    for (Object herbivore : herbivores) {
                         Herbivore herbivoreCaterpillar = (Herbivore) herbivore;
                         if (herbivoreCaterpillar.getClass().getSimpleName().equals("Caterpillar")) {
                             herbivores.remove(herbivore);

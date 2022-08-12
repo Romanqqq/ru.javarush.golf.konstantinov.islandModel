@@ -1,4 +1,4 @@
-package animal.herbivore;
+package animal;
 
 import animal.Animal;
 import island.IslandLocation;
@@ -15,13 +15,14 @@ public abstract class Herbivore extends Animal {
     }
 
     //    реализовал метод eat для травоядных
-    public void eat(List<Plant> plants) {
+    @Override
+    public void eat(List<?> foodList,List<?> listFood) {
         if (getSaturation() <= getSaturationMax() / 2) {
             while (getSaturation() <= getSaturationMax()) {
                 int chanceEat = ThreadLocalRandom.current().nextInt(100);
-                int listPlants = plants.size();
+                int listPlants = foodList.size();
                 if (chanceEat > 50 && listPlants > 0) {
-                    plants.remove(1);
+                    foodList.remove(1);
                     this.setSaturation(getSaturation() + 1);
                 }
             }

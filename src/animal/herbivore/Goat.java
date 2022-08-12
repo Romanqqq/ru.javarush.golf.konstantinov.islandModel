@@ -1,5 +1,7 @@
 package animal.herbivore;
 
+import animal.Herbivore;
+
 //Коза
 public class Goat extends Herbivore {
     //задал основные характеристики

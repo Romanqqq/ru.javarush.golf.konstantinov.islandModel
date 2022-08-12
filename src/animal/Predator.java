@@ -1,4 +1,4 @@
-package animal.predator;
+package animal;
 import animal.Animal;
 import parameter.MapChance;
 
@@ -12,8 +12,8 @@ public abstract class Predator extends Animal {
     }
 
     //метод eat для хищников
-
-    public void eat(List<?> huntObjectHerbivore, List<Object> huntObjectPredator) {
+@Override
+    public void eat(List<?> huntObjectHerbivore, List<?> huntObjectPredator) {
         //создаем мапу, в которую попадут все животные, которых можно съесть
         Map<String, Integer> mapHuntChance = null;
         List<String> huntObject = null;

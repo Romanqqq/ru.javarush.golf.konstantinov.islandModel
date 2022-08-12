@@ -1,5 +1,7 @@
 package animal.predator;
 
+import animal.Predator;
+
 //Лиса
 public class Fox extends Predator {
     private final int maxQuantityTypeAnimal=30; // максимальное количество одного вида в ячейке

@@ -1,6 +1,9 @@
 package animal.herbivore;
+
+import animal.Herbivore;
+
 //Гусеница
-public class Caterpillar extends Herbivore  {
+public class Caterpillar extends Herbivore {
     private final int maxQuantityTypeAnimal=1000; // максимальное количество одного вида в ячейке
     private double saturation;
 

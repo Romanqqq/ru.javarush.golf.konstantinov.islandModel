@@ -1,4 +1,7 @@
 package animal.herbivore;
+
+import animal.Herbivore;
+
 //Олень
 public class Deer extends Herbivore {
     private final int maxQuantityTypeAnimal=20; // максимальное количество одного вида в ячейке

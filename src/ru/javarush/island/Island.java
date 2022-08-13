@@ -1,7 +1,7 @@
-package island;
+package ru.javarush.island;
 
 public class Island {
-    static int side = 4;
+    static int side = 2;
     private static final IslandLocation[][] islandLocations = new IslandLocation[side][side];
 
     public Island() {
@@ -12,8 +12,6 @@ public class Island {
 
         }
     }
-
-
     public IslandLocation[][] getIslandLocation(){
         return islandLocations;
     }

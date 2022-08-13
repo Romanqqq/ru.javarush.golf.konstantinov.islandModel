@@ -1,5 +1,4 @@
-package island;
-import island.IslandLocation;
+package ru.javarush.island;
 
 public class LifeOnTheIsland implements Runnable{
     private final IslandLocation[][] islandResidents;
@@ -11,9 +10,9 @@ public class LifeOnTheIsland implements Runnable{
     public void run() {
         for (int i = 0; i < islandResidents.length; i++) {
             for (int j = 0; j < islandResidents[i].length; j++) {
-            move(islandResidents[i][j],i,j);
-            eatAnimal(islandResidents[i][j]);
             deathFromExhaustion(islandResidents[i][j]);
+            eatAnimal(islandResidents[i][j]);
+            move(islandResidents[i][j],i,j);
             bornAnimal(islandResidents[i][j]);
             }
         }

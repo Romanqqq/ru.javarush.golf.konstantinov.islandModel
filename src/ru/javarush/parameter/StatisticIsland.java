@@ -1,6 +1,6 @@
-package parameter;
+package ru.javarush.parameter;
 
-import island.IslandLocation;
+import ru.javarush.island.IslandLocation;
 
 public class StatisticIsland implements Runnable {
     private int iteration;

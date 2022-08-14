@@ -8,7 +8,7 @@ public class Buffalo extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.buffaloMaxQuantityLocation;
 
     public Buffalo() {
-        super(3, 700, 100, 4);
+        super(3, 700, 100);
     }
 
     public static int getMaxQuantityLocation() {

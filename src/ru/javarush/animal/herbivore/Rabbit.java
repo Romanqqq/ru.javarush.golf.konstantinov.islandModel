@@ -9,7 +9,7 @@ public class Rabbit extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.rabbitMaxQuantityLocation;
 
     public Rabbit() {
-        super(2, 2, 0.45, 5);
+        super(2, 2, 0.45);
     }
 
     public static int getMaxQuantityLocation() {

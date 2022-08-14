@@ -8,7 +8,7 @@ public class Deer extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.deerMaxQuantityLocation;
 
     public Deer() {
-        super(4, 300, 50, 4);
+        super(4, 300, 50);
     }
 
     public static int getMaxQuantityLocation() {

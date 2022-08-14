@@ -8,8 +8,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 public class Predator extends Animal implements Raptor {
-    public Predator(int movementSpeed, double weight, double saturationMax, int hungryAnimalTime) {
-        super(movementSpeed, weight, saturationMax, hungryAnimalTime);
+    public Predator(int movementSpeed, double weight, double saturationMax) {
+        super(movementSpeed, weight, saturationMax);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class Predator extends Animal implements Raptor {
             int randomAnimal;
             int chanceEat = ThreadLocalRandom.current().nextInt(0, 100);
 
-            if (this.getHungryAnimalTime() == 0) {
+            if (this.getSaturation()== 0) {
                 if (this.getClass().getSimpleName().equals("Bear")) {
                     mapHuntChance = Info.bearEat;
                 } else if (this.getClass().getSimpleName().equals("Boa")) {

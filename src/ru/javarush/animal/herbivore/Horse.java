@@ -8,7 +8,7 @@ public class Horse extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.horseMaxQuantityLocation;
 
     public Horse() {
-        super(4, 400, 60, 6);
+        super(4, 400, 60);
     }
 
     public static int getMaxQuantityLocation() {

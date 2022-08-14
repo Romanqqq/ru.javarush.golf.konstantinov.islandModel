@@ -12,7 +12,7 @@ public class Duck extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.duckMaxQuantityLocation;
 
     public Duck() {
-        super(4, 1, 0.15, 4);
+        super(4, 1, 0.15);
     }
 
     public static int getMaxQuantityLocation() {
@@ -28,7 +28,6 @@ public class Duck extends Herbivore implements Herbivorous {
                     double difference = this.getSaturationMax() - this.getSaturation();
                     if (foodList.size() > difference) {
                         this.setSaturation(this.getSaturationMax());
-                        this.setHungryAnimalTime(this.getHungryAnimalTimeMax());
                         foodList.subList(0, (int) difference).clear();
                     }
                 } else {

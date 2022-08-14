@@ -8,7 +8,7 @@ public class Bear extends Predator implements Raptor {
     private static int maxQuantityLocation = Info.bearMaxQuantityLocation;
 
     public Bear() {
-        super(2, 500, 80, 20);
+        super(2, 500, 80);
     }
 
     public static int getMaxQuantityLocation() {

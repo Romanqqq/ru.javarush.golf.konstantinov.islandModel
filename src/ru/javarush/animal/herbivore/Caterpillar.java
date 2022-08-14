@@ -8,7 +8,7 @@ public class Caterpillar extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.caterpillarMaxQuantityLocation;
 
     public Caterpillar() {
-        super(0, 0.01, 0, 1);
+        super(0, 0.01, 0);
     }
 
     public static int getMaxQuantityLocation() {

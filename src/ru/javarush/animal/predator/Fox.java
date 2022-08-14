@@ -8,7 +8,7 @@ public class Fox extends Predator implements Raptor {
     private static int maxQuantityLocation = Info.foxMaxQuantityLocation;
 
     public Fox() {
-        super(2, 8, 2, 6);
+        super(2, 8, 2);
     }
 
     public static int getMaxQuantityLocation() {

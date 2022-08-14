@@ -13,7 +13,7 @@ public class Boar extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.boarMaxQuantityLocation;
 
     public Boar() {
-        super(2, 400, 50, 8);
+        super(2, 400, 50);
     }
 
     public static int getMaxQuantityLocation() {
@@ -29,7 +29,6 @@ public class Boar extends Herbivore implements Herbivorous {
                     double difference = this.getSaturationMax() - this.getSaturation();
                     if (foodList.size() > difference) {
                         this.setSaturation(this.getSaturationMax());
-                        this.setHungryAnimalTime(this.getHungryAnimalTimeMax());
                         foodList.subList(0, (int) difference).clear();
                     }
                 } else if (chanceEat > 10 && chanceEat < 50) {

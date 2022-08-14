@@ -8,7 +8,7 @@ public class Goat extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.goatMaxQuantityLocation;
 
     public Goat() {
-        super(3, 60, 10, 5);
+        super(3, 60, 10);
     }
 
     public static int getMaxQuantityLocation() {

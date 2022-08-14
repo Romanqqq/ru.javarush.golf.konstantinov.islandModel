@@ -12,7 +12,7 @@ public class Mouse extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.mouseMaxQuantityLocation;
 
     public Mouse() {
-        super(1, 0.05, 0.01, 2);
+        super(1, 0.05, 0.01);
     }
 
     public static int getMaxQuantityLocation() {
@@ -28,7 +28,6 @@ public class Mouse extends Herbivore implements Herbivorous {
                     double difference = this.getSaturationMax() - this.getSaturation();
                     if (foodList.size() > difference) {
                         this.setSaturation(this.getSaturationMax());
-                        this.setHungryAnimalTime(this.getHungryAnimalTimeMax());
                         foodList.subList(0, (int) difference).clear();
                     }
                 } else  {

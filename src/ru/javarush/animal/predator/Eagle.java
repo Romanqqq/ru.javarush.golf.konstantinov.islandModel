@@ -8,7 +8,7 @@ public class Eagle extends Predator implements Raptor {
     private static int maxQuantityLocation = Info.eagleMaxQuantityLocation;
 
     public Eagle() {
-        super(3, 6, 1, 5);
+        super(3, 6, 1);
     }
 
     public static int getMaxQuantityLocation() {

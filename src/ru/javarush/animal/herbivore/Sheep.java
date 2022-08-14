@@ -8,7 +8,7 @@ public class Sheep extends Herbivore implements Herbivorous {
     private static int maxQuantityLocation = Info.sheepMaxQuantityLocation;
 
     public Sheep() {
-        super(3, 70, 15, 4);
+        super(3, 70, 15);
     }
 
     public static int getMaxQuantityLocation() {

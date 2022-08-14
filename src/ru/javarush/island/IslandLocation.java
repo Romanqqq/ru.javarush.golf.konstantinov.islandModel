@@ -76,14 +76,14 @@ public class IslandLocation {
 
     public void saturationDecreases() {
         for (Animal predator : cellPredators) {
-            if (predator.getHungryAnimalTime() <= 0) {
+            if (predator.getSaturation() <= 0) {
                 cellPredators.remove(predator);
             } else {
                 predator.hunger();
             }
         }
         for (Animal herbivore : cellHerbivore) {
-            if (herbivore.getHungryAnimalTime() <= 0) {
+            if (herbivore.getSaturation() <= 0) {
                 cellHerbivore.remove(herbivore);
             } else {
                 herbivore.hunger();

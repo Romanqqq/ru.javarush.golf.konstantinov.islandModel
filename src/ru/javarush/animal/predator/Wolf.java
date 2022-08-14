@@ -9,7 +9,7 @@ public class Wolf extends Predator implements Raptor {
     private static int maxQuantityLocation = Info.wolfMaxQuantityLocation;
 
     public Wolf() {
-        super(3, 50, 8, 8);
+        super(3, 50, 8);
     }
 
     public static int getMaxQuantityLocation() {

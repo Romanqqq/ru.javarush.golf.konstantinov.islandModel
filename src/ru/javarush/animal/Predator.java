@@ -41,23 +41,27 @@ public class Predator extends Animal implements Raptor {
                 if (huntObject != null && huntObject.size() > 0) {
                     randomAnimal = ThreadLocalRandom.current().nextInt(0, huntObject.size());
                     animalEat = huntObject.get(randomAnimal);
-                    for (Object herbivore : foodList) {
-                        Animal herbivoreAnimal = (Animal) herbivore;
-                        if (animalEat.equals(herbivoreAnimal.getClass().getSimpleName())) {
-                            foodList.remove(herbivore);
-                        } else {
-                            for (Object predator : listFood) {
-                                Animal predatorAnimal = (Animal) predator;
-                                if (animalEat.equals(predatorAnimal.getClass().getSimpleName())) {
-                                    listFood.remove(predator);
-                                }
-                            }
-                        }
-                    }
+                    toBeEaten(foodList, listFood, animalEat);
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void toBeEaten(List<?> foodList, List<?> listFood, String animalEat) {
+        for (Object herbivore : foodList) {
+            Animal herbivoreAnimal = (Animal) herbivore;
+            if (animalEat.equals(herbivoreAnimal.getClass().getSimpleName())) {
+                foodList.remove(herbivore);
+            } else {
+                for (Object predator : listFood) {
+                    Animal predatorAnimal = (Animal) predator;
+                    if (animalEat.equals(predatorAnimal.getClass().getSimpleName())) {
+                        listFood.remove(predator);
+                    }
+                }
+            }
         }
     }
 }

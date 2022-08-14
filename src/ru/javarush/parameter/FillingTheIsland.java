@@ -59,32 +59,36 @@ public class FillingTheIsland {
                 }
                 if (children != 0) {
 
-                    try {
-                        Field maxQuantityLocationCell = a.getDeclaredField("maxQuantityLocation");
-                        maxQuantityLocationCell.setAccessible(true);
-                        int countAnimal = (int) maxQuantityLocationCell.get(null);
-                        if ((male + female + children) < countAnimal) {
-                            Constructor<Animal> constructor = a.getConstructor();
-                            for (int i = 0; i <= children; i++) {
-                                Animal animalAdd = constructor.newInstance();
-                                wildLife.add(animalAdd);
-                            }
-                        } else {
-                            countAnimal = countAnimal - (male + female);
-                            if (countAnimal > 0) {
-                                Constructor<Animal> constructor = a.getConstructor();
-                                for (int i = 0; i < countAnimal; i++) {
-                                    Animal animalAdd = constructor.newInstance();
-                                    wildLife.add(animalAdd);
-                                }
-                            }
-                        }
-                    } catch (NoSuchFieldException | IllegalAccessException | NoSuchMethodException |
-                             InvocationTargetException | InstantiationException e) {
-                        throw new RuntimeException(e);
+                    bornAnimals(wildLife, a, male, female, children);
+                }
+            }
+        }
+    }
+
+    private static void bornAnimals(List<Animal> wildLife, Class a, int male, int female, int children) {
+        try {
+            Field maxQuantityLocationCell = a.getDeclaredField("maxQuantityLocation");
+            maxQuantityLocationCell.setAccessible(true);
+            int countAnimal = (int) maxQuantityLocationCell.get(null);
+            if ((male + female + children) < countAnimal) {
+                Constructor<Animal> constructor = a.getConstructor();
+                for (int i = 0; i <= children; i++) {
+                    Animal animalAdd = constructor.newInstance();
+                    wildLife.add(animalAdd);
+                }
+            } else {
+                countAnimal = countAnimal - (male + female);
+                if (countAnimal > 0) {
+                    Constructor<Animal> constructor = a.getConstructor();
+                    for (int i = 0; i < countAnimal; i++) {
+                        Animal animalAdd = constructor.newInstance();
+                        wildLife.add(animalAdd);
                     }
                 }
             }
+        } catch (NoSuchFieldException | IllegalAccessException | NoSuchMethodException |
+                 InvocationTargetException | InstantiationException e) {
+            throw new RuntimeException(e);
         }
     }
 }

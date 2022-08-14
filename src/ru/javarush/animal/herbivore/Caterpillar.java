@@ -1,14 +1,17 @@
 package ru.javarush.animal.herbivore;
 
 import ru.javarush.animal.Herbivore;
-public class Caterpillar extends Herbivore {
-    private static int maxQuantityTypeAnimal = 1000;
+import ru.javarush.animal.Herbivorous;
+import ru.javarush.parameter.Info;
+
+public class Caterpillar extends Herbivore implements Herbivorous {
+    private static int maxQuantityLocation = Info.caterpillarMaxQuantityLocation;
 
     public Caterpillar() {
         super(0, 0.01, 0, 1);
     }
 
-    public static int getMaxQuantityTypeAnimal() {
-        return maxQuantityTypeAnimal;
+    public static int getMaxQuantityLocation() {
+        return maxQuantityLocation;
     }
 }

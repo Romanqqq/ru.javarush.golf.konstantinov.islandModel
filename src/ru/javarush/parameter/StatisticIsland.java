@@ -22,14 +22,16 @@ public class StatisticIsland implements Runnable {
         try {
             for (int i = 0; i < islandLocations.length; i++) {
                 for (int j = 0; j < islandLocations[i].length; j++) {
-                    System.out.println("Ячейка: " + i + " " + j);
+                    System.out.println("------------------------------------------------------------------");
+                    System.out.println("Ячейка: " + i + " : " + j);
                     System.out.println("Растений: " + islandLocations[i][j].getCellPlants());
                     System.out.println("Травоядных: " + islandLocations[i][j].getCellHerbivore());
                     System.out.println("Хищников: " + islandLocations[i][j].getCellPredators());
-
+                    System.out.println(islandLocations[i][j].numberOfLiveHerbivore());
+                    System.out.println(islandLocations[i][j].numberOfLivePredator());
                 }
             }
-            System.out.println("**************************************************************************");
+            System.out.println("******************************************************************");
 
         } catch (Exception e) {
             e.printStackTrace();

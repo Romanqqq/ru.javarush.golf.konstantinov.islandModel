@@ -1,8 +1,9 @@
 package ru.javarush.island;
 
+import ru.javarush.IslandSettings;
+
 public class Island {
-    static int side = 2;
-    private static final IslandLocation[][] islandLocations = new IslandLocation[side][side];
+    private static final IslandLocation[][] islandLocations = new IslandLocation[IslandSettings.cellY][IslandSettings.cellX];
 
     public Island() {
         for (int i = 0; i < islandLocations.length; i++) {

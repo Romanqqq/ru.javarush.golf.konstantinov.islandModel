@@ -16,17 +16,17 @@ public abstract class Animal {
     private int hungryAnimalTimeMax;
 
 
-    public Animal(int movementSpeed, double weight, double saturation, int hungryAnimalTime) {
+    public Animal(int movementSpeed, double weight, double saturationMax, int hungryAnimalTime) {
         this.movementSpeed = movementSpeed;
         this.weight = weight;
-        this.saturationMax = saturation;
-        this.saturation = saturation;
+        this.saturationMax = saturationMax;
+        this.saturation = saturationMax;
         this.hungryAnimalTime = hungryAnimalTime;
         this.hungryAnimalTimeMax = hungryAnimalTime;
         setGenderAnimal();
     }
 
-    public Direction directionOfMovement() {
+    public Direction setDirectionOfMovement() {
         Direction direction;
         int directionMove = ThreadLocalRandom.current().nextInt(0, 4);
 

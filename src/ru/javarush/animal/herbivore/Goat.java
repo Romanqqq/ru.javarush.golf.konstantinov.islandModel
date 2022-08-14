@@ -1,16 +1,18 @@
 package ru.javarush.animal.herbivore;
 
 import ru.javarush.animal.Herbivore;
+import ru.javarush.animal.Herbivorous;
+import ru.javarush.parameter.Info;
 
-public class Goat extends Herbivore {
-    private static int maxQuantityTypeAnimal = 140;
+public class Goat extends Herbivore implements Herbivorous {
+    private static int maxQuantityLocation = Info.goatMaxQuantityLocation;
 
     public Goat() {
         super(3, 60, 10, 5);
     }
 
-    public static int getMaxQuantityTypeAnimal() {
-        return maxQuantityTypeAnimal;
+    public static int getMaxQuantityLocation() {
+        return maxQuantityLocation;
     }
 
 

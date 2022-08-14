@@ -1,5 +1,7 @@
 package ru.javarush.parameter;
+
 import com.google.common.reflect.ClassPath;
+
 import java.io.IOException;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -17,11 +19,13 @@ public class ScannerAnimal {
         }
 
     }
-    public static Set<Class> scanPackageAnimal(String namePackage) throws IOException{
-        return ClassPath.from(ClassLoader.getSystemClassLoader()).getAllClasses().stream().filter(classPackage->
-                classPackage.getPackageName().equalsIgnoreCase(namePackage)).map(classPackage->classPackage.load()).
+
+    public static Set<Class> scanPackageAnimal(String namePackage) throws IOException {
+        return ClassPath.from(ClassLoader.getSystemClassLoader()).getAllClasses().stream().filter(classPackage ->
+                        classPackage.getPackageName().equalsIgnoreCase(namePackage)).map(classPackage -> classPackage.load()).
                 collect(Collectors.toSet());
     }
+
     public static Set<Class> getPredatorAnimal() {
         return predatorAnimal;
     }

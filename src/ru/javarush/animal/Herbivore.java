@@ -2,7 +2,7 @@ package ru.javarush.animal;
 
 import java.util.List;
 
-public class Herbivore extends Animal implements Herbivores {
+public class Herbivore extends Animal implements Herbivorous {
     public Herbivore(int movementSpeed, double weight, double saturationMax, int hungryAnimalTime) {
         super(movementSpeed, weight, saturationMax, hungryAnimalTime);
     }

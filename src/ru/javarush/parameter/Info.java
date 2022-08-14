@@ -3,7 +3,9 @@ package ru.javarush.parameter;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapChance {
+public class Info {
+
+
     public static Map<String, Integer> wolfEat = new HashMap<>();
     public static Map<String, Integer> bearEat = new HashMap<>();
     public static Map<String, Integer> foxEat = new HashMap<>();
@@ -47,5 +49,26 @@ public class MapChance {
         boaEat.put("Mouse", 40);
         boaEat.put("Duck", 10);
     }
-    public MapChance(){}
+
+    public static int boarMaxQuantityLocation = 50;
+    public static int buffaloMaxQuantityLocation = 10;
+    public static int caterpillarMaxQuantityLocation = 1000;
+    public static int deerMaxQuantityLocation = 20;
+    public static int duckMaxQuantityLocation = 200;
+    public static int goatMaxQuantityLocation = 140;
+    public static int horseMaxQuantityLocation = 20;
+    public static int mouseMaxQuantityLocation = 500;
+    public static int rabbitMaxQuantityLocation = 150;
+    public static int sheepMaxQuantityLocation = 140;
+
+    public static int bearMaxQuantityLocation = 5;
+    public static int boaMaxQuantityLocation = 30;
+    public static int eagleMaxQuantityLocation = 20;
+    public static int foxMaxQuantityLocation = 30;
+    public static int wolfMaxQuantityLocation = 30;
+
+    public static int plantMaxQuantityLocation = 200;
+
+    public Info() {
+    }
 }

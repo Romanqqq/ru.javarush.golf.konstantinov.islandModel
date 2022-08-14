@@ -1,4 +1,7 @@
 # ru.javarush.golf.konstantinov.islandModel
+
+The island is in minimal viable condition!
+
 To read classes from packages, a library is used - google.guava
 
 
